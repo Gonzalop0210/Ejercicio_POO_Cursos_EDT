@@ -1,4 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
 body {
-    background-color: #333;
-    color: aliceblue;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.container__title {
+  font-size: 50px;
+}
+
+.container__container-button {
+  display: flex;
+  justify-content: space-around;
+}
+
+.container-buton__button {
+  width: 80px;
+  background-color: rgb(23, 23, 255);
+  color: aliceblue;
+  border: 1px solid rgb(23, 23, 255);
+  padding: 7px 0;
+  border-radius: 8px;
+  transition: .5s;
+  &:hover {
+    background-color: rgb(57, 57, 255);
+    cursor: pointer;
+  }
 }
