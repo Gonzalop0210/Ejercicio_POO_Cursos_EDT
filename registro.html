@@ -6,28 +6,29 @@
   <title>Document</title>
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="registro.css">
+  <script src="https://kit.fontawesome.com/6d642dc6ea.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <section class="container">
-    <h2 class="container__title-persona">Profesor</h2>
+  <section class="container container-registro">
+    <h2 class="container__title-persona container__title-persona--registro">Profesor</h2>
     <form class="container__form-container">
       <div class="container__group-inputs">
         <label for="" class="container__label">Nombres</label>
-        <input type="text" name="" id="" class="container__inputs">
+        <input type="text" name="" id="" class="container__inputs" placeholder="Your Name">
       </div>
       <div class="container__group-inputs">
         <label for="" class="container__label">Apellidos</label>
-        <input type="text" name="" id="" class="container__inputs">
+        <input type="text" name="" id="" class="container__inputs" placeholder="Your Last Name">
       </div>
       <div class="container__group-inputs">
         <label for="" class="container__label">Edad</label>
-        <input type="text" name="" id="" class="container__inputs">
+        <input type="text" name="" id="" class="container__inputs" placeholder="Your Age">
       </div>
       <div class="container__group-inputs">
         <label for="" class="container__label">Correo</label>
-        <input type="text" name="" id="" class="container__inputs">
+        <input type="text" name="" id="" class="container__inputs" placeholder="tucorreo@gmail.com">
       </div>
-      <div class="container__group-inputs">
+      <div class="container__group-inputs container__group-inputs--combobox">
         <label for="" class="container__label">Cursos a tomar</label>
         <select class="container__cursos" name="Cursos" id="idcursos">
           <option value="seleccionar" class="container__curso-disponible">Seleccionar</option>
@@ -39,7 +40,34 @@
           <option value="spring boot" class="container__curso-disponible">Spring Boot</option>
         </select>
       </div>
+      <div class="container__group-inputs container__group-inputs--cursos-seleccionados">
+        <div class="container-curso--seleccionado">
+          <span class="curso-seleccionado">HTML</span>
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="container-curso--seleccionado">
+          <span class="curso-seleccionado">CSS</span>
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="container-curso--seleccionado">
+          <span class="curso-seleccionado">JavaScript</span>
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
     </form>
+    <div class="container__group-inputs container__group-inputs--buttons">
+      <button class="container-button__button">Enviar</button>
+    </div>
+    <div class="container__group-inputs--container-checkbox">
+      <div class="container-legend-checkbox">
+        <input type="checkbox" name="" id="" class="container-checkbox--seleccionar">
+        <span class="legend-chekbox">Profesor</span>
+      </div>
+      <div class="container-legend-checkbox">
+        <input type="checkbox" name="" id="" class="container-checkbox--seleccionar">
+        <span class="legend-chekbox">Estudiante</span>
+      </div>
+    </div>
   </section>
 </body>
 </html>
