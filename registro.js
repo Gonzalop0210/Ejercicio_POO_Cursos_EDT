@@ -2,22 +2,10 @@ const title_registro = document.querySelector('.container__title-persona--regist
 const select_profesor = document.querySelector('.container-checkbox--seleccionar-profesor')
 const select_alumno = document.querySelector('.container-checkbox--seleccionar-alumno')
 const label_combo_cursos = document.querySelector('.container__label-cursos')
-
-select_profesor.addEventListener('change', ()=>{
-  select_alumno.checked = false
-  if (select_profesor.checked) {
-    title_registro.textContent = 'Profesor'
-    label_combo_cursos.textContent = 'Cursos a dictar'
-  }
-})
-
-select_alumno.addEventListener('change', ()=>{
-  select_profesor.checked = false
-  if (select_alumno.checked) {
-    title_registro.textContent = 'Estudiante'
-    label_combo_cursos.textContent = 'Cursos a llevar'
-  }
-})
+const formulario = document.querySelector('.container__form-container')
+const combobox_cursos = document.querySelector('.container__cursos')
+const contenedor_combo = document.querySelector('.container__group-inputs--combobox')
+const contenedor_cursos_seleccionados = document.querySelector('.container__group-inputs--cursos-seleccionados')
 
 document.addEventListener('DOMContentLoaded', ()=>{
   select_alumno.checked = true
@@ -25,15 +13,22 @@ document.addEventListener('DOMContentLoaded', ()=>{
   label_combo_cursos.textContent = 'Cursos a llevar'
 })
 
-
-const combobox_cursos = document.querySelector('.container__cursos')
-const contenedor_cursos_seleccionados = document.querySelector('.container__group-inputs--cursos-seleccionados')
-
 const boton_enviar = document.querySelector('.container-button__button')
 const input_name = document.querySelector('.container__inputs--name')
 const input_lastname = document.querySelector('.container__inputs--lastname')
 const input_age = document.querySelector('.container__inputs--age')
 const input_email = document.querySelector('.container__inputs--email')
+
+let array_alumnos = []
+let array_profesore = []
+let array_cursos = [{
+  curso1: 'HTML',
+  curso2: 'CSS',
+  curso3: 'JavaScript',
+  curso4: 'React',
+  curso5: 'Java',
+  curso6: 'Spring Boot'
+}]
 
 combobox_cursos.addEventListener('change', (e)=>{
   const div = document.createElement('div');
@@ -66,14 +61,51 @@ combobox_cursos.addEventListener('change', (e)=>{
     combobox_cursos.appendChild(nuevo_curso)
     contenedor_cursos_seleccionados.removeChild(div);
   })
-  /* ---------------------------------------------------------- */
-  boton_enviar.addEventListener('click', ()=>{
-    if (select_alumno.checked) {
-      console.log('Casilla estudiante');
-    } else if (select_profesor.checked) {
-      console.log('Casilla profesor');
-    } else {
-      console.log('Selecciona una casilla');
-    }
-  })
+})
+
+const reset_opciones = Array.from(combobox_cursos.options)
+
+select_profesor.addEventListener('change', ()=>{
+  select_alumno.checked = false
+  formulario.reset()
+  reset_opciones.forEach(opcion => combobox_cursos.appendChild(opcion))
+  combobox_cursos.selectedIndex = 0
+  if (select_profesor.checked) {
+    title_registro.textContent = 'Profesor'
+    label_combo_cursos.textContent = 'Cursos a dictar'
+  }
+})
+
+select_alumno.addEventListener('change', ()=>{
+  select_profesor.checked = false
+  formulario.reset()
+  reset_opciones.forEach(opcion => combobox_cursos.appendChild(opcion))
+  combobox_cursos.selectedIndex = 0
+  if (select_alumno.checked) {
+    title_registro.textContent = 'Estudiante'
+    label_combo_cursos.textContent = 'Cursos a llevar'
+  }
+})
+
+boton_enviar.addEventListener('click', ()=>{
+  const nombre = input_name.value
+  const apellido = input_lastname.value
+  const edad = input_age.value
+  const correo = input_email.value
+  const activo = true
+  const calificacion = 10
+
+  if (select_alumno.checked) {
+    const nuevo_Alumno = new Alumno(nombre,apellido,edad,correo,'JavaScript',activo)
+    array_alumnos.push(nuevo_Alumno)
+  } else if (select_profesor.checked) {
+    const nuevo_Profesor = new Profesor(nombre,apellido,edad,correo,'JAVA',calificacion)
+    array_profesore.push(nuevo_Profesor)
+  } else {
+    console.log('Selecciona una casilla');
+  }
+
+  console.log(array_cursos);
+  console.log(array_alumnos);
+  console.log(array_profesore);
 })
