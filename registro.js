@@ -29,17 +29,23 @@ document.addEventListener('DOMContentLoaded', ()=>{
 const combobox_cursos = document.querySelector('.container__cursos')
 const contenedor_cursos_seleccionados = document.querySelector('.container__group-inputs--cursos-seleccionados')
 
+const boton_enviar = document.querySelector('.container-button__button')
+const input_name = document.querySelector('.container__inputs--name')
+const input_lastname = document.querySelector('.container__inputs--lastname')
+const input_age = document.querySelector('.container__inputs--age')
+const input_email = document.querySelector('.container__inputs--email')
+
 combobox_cursos.addEventListener('change', (e)=>{
   const div = document.createElement('div');
   div.classList.add('container-curso--seleccionado')
   const span = document.createElement('span')
   span.classList.add('curso-seleccionado')
+  const icon_equis = document.createElement('i')
+  icon_equis.classList.add('fa-solid')
+  icon_equis.classList.add('fa-xmark')
   if(combobox_cursos.selectedIndex > 0) {
     span.textContent = e.target.value
-    const icon_equis = document.createElement('i')
-    icon_equis.classList.add('fa-solid')
-    icon_equis.classList.add('fa-xmark')
-
+    
     contenedor_cursos_seleccionados.appendChild(div)
     div.appendChild(span)
     div.appendChild(icon_equis)
@@ -52,4 +58,22 @@ combobox_cursos.addEventListener('change', (e)=>{
     }
   }
   combobox_cursos.selectedIndex = 0
+
+  icon_equis.addEventListener('click', ()=>{
+    const nuevo_curso = document.createElement('option')
+    nuevo_curso.value = span.textContent
+    nuevo_curso.textContent = span.textContent
+    combobox_cursos.appendChild(nuevo_curso)
+    contenedor_cursos_seleccionados.removeChild(div);
+  })
+  /* ---------------------------------------------------------- */
+  boton_enviar.addEventListener('click', ()=>{
+    if (select_alumno.checked) {
+      console.log('Casilla estudiante');
+    } else if (select_profesor.checked) {
+      console.log('Casilla profesor');
+    } else {
+      console.log('Selecciona una casilla');
+    }
+  })
 })
