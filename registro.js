@@ -53,7 +53,7 @@ combobox_cursos.addEventListener('change', (e)=>{
     }
   }
   combobox_cursos.selectedIndex = 0
-
+  
   icon_equis.addEventListener('click', ()=>{
     const nuevo_curso = document.createElement('option')
     nuevo_curso.value = span.textContent
@@ -104,8 +104,15 @@ boton_enviar.addEventListener('click', ()=>{
   } else {
     console.log('Selecciona una casilla');
   }
-
-  console.log(array_cursos);
-  console.log(array_alumnos);
-  console.log(array_profesore);
+  
+  console.log(contenedor_cursos_seleccionados);
+  
+  const span_content = document.querySelectorAll('.curso-seleccionado')
+  for (let span_index of span_content) {
+    console.log(span_index.textContent);
+  }
+  
+  /* console.log(array_cursos)
+  console.log(array_alumnos)
+  console.log(array_profesore) */
 })
