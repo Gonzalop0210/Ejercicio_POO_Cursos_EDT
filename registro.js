@@ -21,14 +21,14 @@ const input_email = document.querySelector('.container__inputs--email')
 
 let array_alumnos = []
 let array_profesore = []
-let array_cursos = [{
-  curso1: 'HTML',
-  curso2: 'CSS',
-  curso3: 'JavaScript',
-  curso4: 'React',
-  curso5: 'Java',
-  curso6: 'Spring Boot'
-}]
+let datos_curso = {
+  nombre: 'HTML',
+  cantidadClases: 20,
+  inscritos: 8,
+  poster: 'imagen HTML'
+}
+
+const add_cursos = new Curso(datos_curso)
 
 combobox_cursos.addEventListener('change', (e)=>{
   const div = document.createElement('div');
@@ -110,10 +110,10 @@ boton_enviar.addEventListener('click', ()=>{
   const span_content = document.querySelectorAll('.curso-seleccionado')
   for (let span_index of span_content) {
     const nombre_curso = span_index.textContent
-    
+    /* console.log(nombre_curso); */
   }
   
-  /* console.log(array_cursos)
+  console.log(datos_curso)
   console.log(array_alumnos)
-  console.log(array_profesore) */
+  console.log(array_profesore)
 })

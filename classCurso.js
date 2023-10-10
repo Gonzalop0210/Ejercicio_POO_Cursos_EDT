@@ -1,39 +1,39 @@
 class Curso {
-  constructor(nombre,cantidadClases,inscritos,poster) {
-    this.nombre = nombre,
-    this.cantidadClases = cantidadClases,
-    this.inscritos = inscritos,
-    this.poster = poster
+  constructor(objetoCursos) {
+    this.nombre = objetoCursos.nombre,
+    this.cantidadClases = objetoCursos.cantidadClases,
+    this.inscritos = objetoCursos.inscritos,
+    this.poster = objetoCursos.poster
   }
   getNombre() {
-    return this.nombre
+    return this._nombre
   }
   
   setNombre(nombre) {
-    this.nombre = nombre
+    this._nombre = nombre
   }
   
   getCantidadClases() {
-    return this.cantidadClases
+    return this._cantidadClases
   }
   
   setCantidadClases(cantidad) {
-    this.cantidadClases = cantidad
+    this._cantidadClases = cantidad
   }
 
   getInscritos() {
-    return this.inscritos
+    return this._inscritos
   }
 
   setInscritos(inscritos) {
-    this.inscritos = inscritos
+    this._inscritos = inscritos
   }
 
   getPoster() {
-    return this.poster
+    return this._poster
   }
 
   setPoster(poster) {
-    this.poster = poster
+    this._poster = poster
   }
 }
