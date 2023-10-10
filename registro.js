@@ -109,7 +109,8 @@ boton_enviar.addEventListener('click', ()=>{
   
   const span_content = document.querySelectorAll('.curso-seleccionado')
   for (let span_index of span_content) {
-    console.log(span_index.textContent);
+    const nombre_curso = span_index.textContent
+    
   }
   
   /* console.log(array_cursos)
