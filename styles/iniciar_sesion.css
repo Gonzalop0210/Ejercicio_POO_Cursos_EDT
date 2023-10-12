@@ -1,0 +1,44 @@
+.container-section__container-buttons {
+  gap: 60px;
+  align-items: center;
+}
+
+.container-section__title {
+  font-size: 35px;
+}
+
+.container-section__container-form {
+  display: flex;
+  width: 450px;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.container-form--item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 80%;
+}
+
+.container-form--item:nth-child(3) {
+  width: 30%;
+  margin-top: 30px;
+}
+
+.container-form__input,
+.container-form__label {
+  width: 100%;
+}
+
+.container-form__input {
+  height: 35px;
+  border-radius: 8px;
+  border: 1px solid black;
+  padding: 0 10px;
+}
+
+.container-form__button--entrar {
+  padding: 6px 25px;
+}
