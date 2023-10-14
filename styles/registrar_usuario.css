@@ -1,0 +1,30 @@
+.container-form--item:nth-child(3) {
+  width: 80%;
+  margin: 0;
+}
+
+.container-form--item:nth-child(7) {
+  width: 30%;
+  margin-top: 30px;
+}
+
+.container-form__input-container--cursos-seleccionados {
+  margin-top: 5px;
+  border: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  height: auto;
+}
+
+.container--cursos-seleccionado__item {
+  border: 1px solid royalblue;
+  display: inline-block;
+  border-radius: 8px;
+  padding: 2px 5px;
+  color: royalblue;
+}
+
+.fa-xmark {
+  font-size: 14px;
+}
