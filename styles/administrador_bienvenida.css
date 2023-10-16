@@ -1,0 +1,25 @@
+.container-section__container-nav {
+  position: absolute;
+  top: 32px;
+  left: 30px;
+  display: flex;
+  gap: 40px;
+}
+
+.container-section__container-nav--item {
+  text-decoration: none;
+  transition: .5s;
+  &:hover {
+    color: royalblue;
+    text-shadow: 8px 8px 6px royalblue;
+    cursor: pointer;
+  }
+}
+
+.container-section {
+  justify-content: start;
+}
+
+.container-section__container-buttons {
+  margin-top: 100px;
+}
