@@ -1,0 +1,10 @@
+.container-section__container-name-agregar-curso {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.container-section__button {
+  font-size: 13px;
+  padding: 2px 18px 5px 18px;
+}
