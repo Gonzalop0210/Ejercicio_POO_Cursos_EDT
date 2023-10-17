@@ -55,4 +55,25 @@
   border: 1px solid black;
   border-radius: 50%;
   padding: 4px 6px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.container-item-personalizado--opciones-editar {
+  transition: .4s;
+  &:hover {
+    background-color: rgb(87, 220, 87);
+    color: white;
+    border: 1px solid rgb(28, 113, 28);
+  }
+}
+
+.container-item-personalizado--opciones-eliminar {
+  transition: .4s;
+  &:hover {
+    background-color: red;
+    color: white;
+    border: 1px solid rgb(210, 1, 1);
+  }
 }
