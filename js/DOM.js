@@ -3,11 +3,13 @@ const link_button_sesion = document.querySelector('.container-section__button--i
 const BUTTON_INICIAR_SESION = document.querySelector('.container-form__button--entrar-ingresar')
 const BUTTON_REGISTRAR_USUARIO = document.querySelector('.container-form__button--entrar-registrar')
 const BUTTON_AGREGAR_CURSO = document.querySelector('.container-section__agregar-curso')
+const OPCION_EDITAR = document.querySelector('.container-item-personalizado--opciones-editar')
 
 const url_iniciar_sesion = '/iniciar_sesion.html'
 const url_registro = '/registrar_usuario.html'
 const URL_BIENVENIDA_USUARIO = '/usuario_bienvenida.html'
 const URL_AGREGAR_CURSO = '/agregar_curso.html'
+const URL_EDITAR_USUARIO = '/administrador_usu.html'
 
 if (link_button_sesion) {
   link_button_sesion.addEventListener('click', ()=>{
@@ -36,5 +38,11 @@ if (BUTTON_REGISTRAR_USUARIO) {
 if (BUTTON_AGREGAR_CURSO) {
   BUTTON_AGREGAR_CURSO.addEventListener('click', ()=> {
     window.location.href = URL_AGREGAR_CURSO
+  })
+}
+
+if (OPCION_EDITAR) {
+  OPCION_EDITAR.addEventListener('click', ()=>{
+    window.location.href = URL_EDITAR_USUARIO
   })
 }
