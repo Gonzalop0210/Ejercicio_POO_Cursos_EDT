@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +9,11 @@
   <link rel="stylesheet" href="styles/iniciar_sesion.css">
   <link rel="stylesheet" href="styles/registrar_usuario.css">
   <link rel="stylesheet" href="styles/administrador_bienvenida.css">
+  <link rel="stylesheet" href="styles/usuario_bienvenida.css">
 </head>
 <body>
   <section class="container-section">
-    <a href="index.html" class="container-section__a--link-administrator">Salir</a>
+    <a href="administrador_bienvenida.html" class="container-section__a--link-administrator">Salir</a>
     <nav class="container-section__container-nav">
       <a href="administrador_bienvenida.html" class="container-section__container-nav--item container-section__container-nav--item-usuarios">Usuarios</a>
       <a href="administrador_cursos.html" class="container-section__container-nav--item container-section__container-nav--item-cursos">Cursos</a>
@@ -21,10 +22,13 @@
       <h2 class="container-section__title">Administrador, <span class="container-section__title-nombre-administrador">Gonzalo</span></h2>
     </div>
     <div class="container-section__container-content-usuarios">
-      <p class="container-section__name-contenido">Usuarios</p>
+      <div class="container-section__container-name-agregar-curso">
+        <p class="container-section__name-contenido">Cursos disponibles en la plataforma</p>
+        <button class="container-section__button container-section__agregar-curso">Agregar Curso</button>
+      </div>
       <!-- --------- -->
       <div class="container-section__container-item-personalizados">
-        <span class="container-item-personalizado--name">Gonzalo</span>
+        <span class="container-item-personalizado--name">HTML</span>
         <div class="container-item-personalizado--opciones">
           <span class="container-item-personalizado--opciones-item container-item-personalizado--opciones-editar"><i class="fa-solid fa-pen"></i></span>
           <span class="container-item-personalizado--opciones-item container-item-personalizado--opciones-eliminar"><i class="fa-solid fa-trash"></i></span>
