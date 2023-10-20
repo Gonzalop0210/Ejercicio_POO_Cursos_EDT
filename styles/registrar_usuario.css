@@ -19,7 +19,9 @@
 
 .container--cursos-seleccionado__item {
   border: 1px solid royalblue;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   border-radius: 8px;
   padding: 2px 5px;
   color: royalblue;
@@ -27,4 +29,14 @@
 
 .fa-xmark {
   font-size: 14px;
+  margin-top: 2.8px;
+  transition: .4s;
+  &:hover {
+    cursor: pointer;
+    text-shadow: 1px 1px 1px royalblue;
+  }
+}
+
+.ocultar {
+  display: none;
 }

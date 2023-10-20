@@ -38,11 +38,11 @@ if (BUTTON_INICIAR_SESION) {
   })
 }
 
-if (BUTTON_REGISTRAR_USUARIO) {
+/* if (BUTTON_REGISTRAR_USUARIO) {
   BUTTON_REGISTRAR_USUARIO.addEventListener('click', ()=> {
     window.location.href = URL_BIENVENIDA_USUARIO
   })
-}
+} */
 
 if (BUTTON_AGREGAR_CURSO) {
   BUTTON_AGREGAR_CURSO.addEventListener('click', ()=> {

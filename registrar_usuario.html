@@ -17,23 +17,23 @@
       <div class="container-section__container-form">
         <div class="container-form--item">
           <label for="" class="container-form__label container-form__label-nombre">Nombre</label>
-          <input type="text" class="container-form__input container-form__input-nombre">
+          <input id="nombre_registro_nuevo_usuario" type="text" class="container-form__input container-form__input-nombre">
         </div>
         <div class="container-form--item">
           <label for="" class="container-form__label container-form__label-apellidos">Apellidos</label>
-          <input type="text" class="container-form__input container-form__input-apellidos">
+          <input id="apellidos_registro_nuevo_usuario" type="text" class="container-form__input container-form__input-apellidos">
         </div>
         <div class="container-form--item">
           <label for="" class="container-form__label container-form__label-edad">Edad</label>
-          <input type="text" class="container-form__input container-form__input-edad">
+          <input id="edad_registro_nuevo_usuario" type="text" class="container-form__input container-form__input-edad">
         </div>
         <div class="container-form--item">
           <label for="" class="container-form__label container-form__label-correo">Correo</label>
-          <input type="email" class="container-form__input container-form__input-correo">
+          <input id="correo_registro_nuevo_usuario" type="email" class="container-form__input container-form__input-correo">
         </div>
         <div class="container-form--item">
           <label for="" class="container-form__label container-form__label-contraseña">Contraseña</label>
-          <input type="password" class="container-form__input container-form__input-contraseña">
+          <input id="contraseña_registro_nuevo_usuario" type="password" class="container-form__input container-form__input-contraseña">
         </div>
         <div class="container-form--item">
           <label for="" class="container-form__label container-form__label-combo-cursos">Seleccione sus cursos</label>
@@ -46,10 +46,10 @@
             <option value="Node js" class="container-form__combo-cursos__item-curso">Node js</option>
             <option value="React" class="container-form__combo-cursos__item-curso">React</option>
           </select>
-          <div class="container-form__input container-form__input-container--cursos-seleccionados">
+          <div id="mostrar_cursos_seleccionados_registro" class="container-form__input container-form__input-container--cursos-seleccionados">
             <!-- <div class="container--cursos-seleccionado__item">
               <span class="textarea__curso--seleccionado">HTML</span>
-              <i class="fa-solid fa-xmark"></i>
+              <i id='quitar_curso' class="fa-solid fa-xmark"></i>
             </div> -->
           </div>
         </div>
@@ -60,6 +60,6 @@
     </div>
   </section>
   <script src="js/DOM.js"></script>
-  <script src="js/index.js"></script>
+  <script src="js/registro_nuevo_usuario.js"></script>
 </body>
 </html>
