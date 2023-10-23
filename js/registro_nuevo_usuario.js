@@ -61,7 +61,9 @@ if (BUTTON_REGISTRAR_USUARIO) {
     } else {
       //Obtengo los datos del usuario que se registro
       const PRUEBA_USUARIO = new Alumno(NOMBRE_NUEVO_USUARIO_REG.value, APELLIDOS_NUEVO_USUARIO_REG.value, EDAD_NUEVO_USUARIO_REG.value, CORREO_NUEVO_USUARIO_REG.value, CONTRASEÑA_NUEVO_USUARIO_REG.value)
+      //Aqui selecciono todos los elementos span del html y los que se crea al seleccionar o viceversa
       const HTML_SPAN_NOMBRE_CURSO = document.querySelectorAll('.textarea__curso--seleccionado')
+      //Ya que es un NodeList[] se recorre y obtengo el valor del span
       for (const curso of HTML_SPAN_NOMBRE_CURSO) {
         PRUEBA_USUARIO.cursos.push(curso.innerHTML)
       }
