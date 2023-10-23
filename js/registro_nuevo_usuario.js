@@ -59,8 +59,12 @@ if (BUTTON_REGISTRAR_USUARIO) {
     if (NOMBRE_NUEVO_USUARIO_REG.value === '' || APELLIDOS_NUEVO_USUARIO_REG.value === '' || EDAD_NUEVO_USUARIO_REG.value === '' || CORREO_NUEVO_USUARIO_REG.value === '' || CONTRASEÑA_NUEVO_USUARIO_REG.value === '' || cont <= 1) {
       alert('Llenar completamente el formulario')
     } else {
+      //Obtengo los datos del usuario que se registro
       const PRUEBA_USUARIO = new Alumno(NOMBRE_NUEVO_USUARIO_REG.value, APELLIDOS_NUEVO_USUARIO_REG.value, EDAD_NUEVO_USUARIO_REG.value, CORREO_NUEVO_USUARIO_REG.value, CONTRASEÑA_NUEVO_USUARIO_REG.value)
-
+      const HTML_SPAN_NOMBRE_CURSO = document.querySelectorAll('.textarea__curso--seleccionado')
+      for (const curso of HTML_SPAN_NOMBRE_CURSO) {
+        PRUEBA_USUARIO.cursos.push(curso.innerHTML)
+      }
       console.log(PRUEBA_USUARIO);
       /* window.location.href = URL_BIENVENIDA_USUARIO */
     }
