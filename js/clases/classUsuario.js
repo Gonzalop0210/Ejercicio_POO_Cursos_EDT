@@ -1,4 +1,4 @@
-class Usuario {
+export default class Usuario {
   constructor(nombre, apellidos) {
     this.nombre = nombre
     this.apellidos = apellidos

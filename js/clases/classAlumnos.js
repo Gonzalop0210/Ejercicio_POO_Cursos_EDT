@@ -1,10 +1,11 @@
-class Alumno extends Usuario {
-  constructor(nombre, apellidos, edad, correo, contraseña, cursos) {
+import Usuario from "./classUsuario.js"
+export default class Alumno extends Usuario {
+  constructor(nombre, apellidos, edad, correo, contraseña) {
     super(nombre, apellidos)
     this.edad = edad
     this.correo = correo
     this.contraseña = contraseña
-    this.cursos = cursos
+    this.cursos = []
   }
   getEdad() {
     return this.edad

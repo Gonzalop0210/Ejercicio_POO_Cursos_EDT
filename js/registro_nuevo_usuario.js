@@ -1,3 +1,5 @@
+import Alumno from "./clases/classAlumnos.js"
+
 const COMBO_CURSOS = document.getElementById('combo_cursos_index')
 const CONTAINER_MOSTRAR_CURSOS_SELECIONADOS = document.getElementById('mostrar_cursos_seleccionados_registro')
 
@@ -35,7 +37,7 @@ COMBO_CURSOS.addEventListener('change', ()=> {
       CONTAINER_MOSTRAR_CURSOS_SELECIONADOS.removeChild(DIV_CONTAINER_CURSO_ITEM)
     })
   } else {
-    console.error('Seleccione una opción')
+    alert('Seleccione una opción')
   }
 })
 
@@ -57,7 +59,10 @@ if (BUTTON_REGISTRAR_USUARIO) {
     if (NOMBRE_NUEVO_USUARIO_REG.value === '' || APELLIDOS_NUEVO_USUARIO_REG.value === '' || EDAD_NUEVO_USUARIO_REG.value === '' || CORREO_NUEVO_USUARIO_REG.value === '' || CONTRASEÑA_NUEVO_USUARIO_REG.value === '' || cont <= 1) {
       alert('Llenar completamente el formulario')
     } else {
-      window.location.href = URL_BIENVENIDA_USUARIO
+      const PRUEBA_USUARIO = new Alumno(NOMBRE_NUEVO_USUARIO_REG.value, APELLIDOS_NUEVO_USUARIO_REG.value, EDAD_NUEVO_USUARIO_REG.value, CORREO_NUEVO_USUARIO_REG.value, CONTRASEÑA_NUEVO_USUARIO_REG.value)
+
+      console.log(PRUEBA_USUARIO);
+      /* window.location.href = URL_BIENVENIDA_USUARIO */
     }
   })
 }
