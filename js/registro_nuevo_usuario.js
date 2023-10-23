@@ -45,11 +45,17 @@ const APELLIDOS_NUEVO_USUARIO_REG = document.getElementById('apellidos_registro_
 const EDAD_NUEVO_USUARIO_REG = document.getElementById('edad_registro_nuevo_usuario')
 const CORREO_NUEVO_USUARIO_REG = document.getElementById('correo_registro_nuevo_usuario')
 const CONTRASEÑA_NUEVO_USUARIO_REG = document.getElementById('contraseña_registro_nuevo_usuario')
+//Contabilizamos la cantidad de click para validar la seleccion del combo
+let cont = 0
+COMBO_CURSOS.addEventListener('click', ()=> {
+  cont++
+  return cont;
+})
 //Validando que los campos no estén vacios
 if (BUTTON_REGISTRAR_USUARIO) {
   BUTTON_REGISTRAR_USUARIO.addEventListener('click', ()=> {
-    if (NOMBRE_NUEVO_USUARIO_REG.value === '' || APELLIDOS_NUEVO_USUARIO_REG.value === '' || EDAD_NUEVO_USUARIO_REG.value === '' || CORREO_NUEVO_USUARIO_REG.value === '' || CONTRASEÑA_NUEVO_USUARIO_REG.value === '') {
-      console.log('Falta llenar')
+    if (NOMBRE_NUEVO_USUARIO_REG.value === '' || APELLIDOS_NUEVO_USUARIO_REG.value === '' || EDAD_NUEVO_USUARIO_REG.value === '' || CORREO_NUEVO_USUARIO_REG.value === '' || CONTRASEÑA_NUEVO_USUARIO_REG.value === '' || cont <= 1) {
+      alert('Llenar completamente el formulario')
     } else {
       window.location.href = URL_BIENVENIDA_USUARIO
     }
