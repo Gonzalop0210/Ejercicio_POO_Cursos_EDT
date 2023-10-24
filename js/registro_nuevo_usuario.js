@@ -75,20 +75,13 @@ if (BUTTON_REGISTRAR_USUARIO) {
       }
       //Agregar nuevo usuario al objeto de usuarios
       OBJECT_USUARIOS_REGISTRADOS[NUEVO_USUARIO.nombre] = NUEVO_USUARIO
-      console.log(OBJECT_USUARIOS_REGISTRADOS);
-      /* window.location.href = URL_BIENVENIDA_USUARIO */
+      /* OBJECT_USUARIOS_REGISTRADOS[NUEVO_USUARIO.nombre].nombre; */
+      window.location.href = URL_BIENVENIDA_USUARIO
     }
   })
 }
 //Exportando el archivo
-/* export { OBJECT_USUARIOS_REGISTRADOS }
-import { ADD_NOMBRE_NUEVO } from "./bienvenida_usuario.js"
-function clickBotonRegistrar(nombreUsuario) {
-  ADD_NOMBRE_NUEVO.textContent = nombreUsuario
-}
-
-if (BUTTON_REGISTRAR_USUARIO){
-    BUTTON_REGISTRAR_USUARIO.addEventListener('click', clickBotonRegistrar)
-}
-
-export { clickBotonRegistrar } */
+export { OBJECT_USUARIOS_REGISTRADOS }
+/* function clickBotonRegistrar() {
+  ADD_NOMBRE_NUEVO.textContent = NOMBRE_DEL_USUARIO
+} */
