@@ -15,23 +15,25 @@
   <section class="container-section">
     <a href="iniciar_sesion.html" class="container-section__a--link-administrator">Salir</a>
     <div class="container-section__container-buttons">
-      <h2 class="container-section__title">Hola <span class="container-section__title-nombre-administrador">Gonzalo</span>!</h2>
+      <h2 class="container-section__title">Hola <span class="container-section__title-nombre-administrador" id="nombre_bienvenida_nuevo_usuario"></span>!</h2>
     </div>
     <div class="container-section__container-content-usuarios">
       <div class="container-section__container-name-agregar-curso">
         <p class="container-section__name-contenido">Cursos</p>
         <button id="agregar_curso_usuario" class="container-section__button container-section__agregar-curso">Agregar Curso</button>
       </div>
-      <!-- --------- -->
+      <!-- 
       <div class="container-section__container-item-personalizados">
         <span class="container-item-personalizado--name">HTML</span>
         <div class="container-item-personalizado--opciones">
           <span class="container-item-personalizado--opciones-item container-item-personalizado--opciones-eliminar"><i class="fa-solid fa-trash"></i></span>
         </div>
       </div>
-      <!-- --------- -->
+      -->
     </div>
   </section>
   <script src="js/DOM.js"></script>
+  <script type="module" src="js/registro_nuevo_usuario.js"></script>
+  <script type="module" src="js/bienvenida_usuario.js"></script>
 </body>
 </html>
