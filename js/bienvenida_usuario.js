@@ -1,7 +1,9 @@
-import { NUEVO_USUARIO } from "./registro_nuevo_usuario.js"
+/* import { OBJECT_USUARIOS_REGISTRADOS } from "./registro_nuevo_usuario.js"
 import { clickBotonRegistrar } from "./registro_nuevo_usuario.js"
-const ADD_NOMBRE_NUEVO = document.getElementById('nombre_bienvenida_nuevo_usuario')
+export const ADD_NOMBRE_NUEVO = document.getElementById('nombre_bienvenida_nuevo_usuario')
 
-document.addEventListener('DOMContentLoaded', ()=>{
-  clickBotonRegistrar()
-})
+document.addEventListener('DOMContentLoaded', ()=> {
+  if (ADD_NOMBRE_NUEVO) {
+    clickBotonRegistrar('NUEVO_USUARIO')
+  }
+}) */

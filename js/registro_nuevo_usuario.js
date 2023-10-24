@@ -57,8 +57,8 @@ if (COMBO_CURSOS) {
     return cont;
   })
 }
-//Inicializando el objeto para poder exportarlo
-let NUEVO_USUARIO
+//Creando e inicializando el objeto para poder exportarlo
+const OBJECT_USUARIOS_REGISTRADOS = {}
 //Validando que los campos no estén vacios
 if (BUTTON_REGISTRAR_USUARIO) {
   BUTTON_REGISTRAR_USUARIO.addEventListener('click', ()=> {
@@ -66,22 +66,29 @@ if (BUTTON_REGISTRAR_USUARIO) {
       alert('Llenar completamente el formulario')
     } else {
       //Obtengo los datos del usuario que se registro
-      NUEVO_USUARIO = new Alumno(NOMBRE_NUEVO_USUARIO_REG.value, APELLIDOS_NUEVO_USUARIO_REG.value, EDAD_NUEVO_USUARIO_REG.value, CORREO_NUEVO_USUARIO_REG.value, CONTRASEÑA_NUEVO_USUARIO_REG.value)
+      const NUEVO_USUARIO = new Alumno(NOMBRE_NUEVO_USUARIO_REG.value, APELLIDOS_NUEVO_USUARIO_REG.value, EDAD_NUEVO_USUARIO_REG.value, CORREO_NUEVO_USUARIO_REG.value, CONTRASEÑA_NUEVO_USUARIO_REG.value)
       //Aqui selecciono todos los elementos span del html y los que se crea al seleccionar o viceversa
       const HTML_SPAN_NOMBRE_CURSO = document.querySelectorAll('.textarea__curso--seleccionado')
       //Ya que es un NodeList[] se recorre y obtengo el valor del span
       for (const curso of HTML_SPAN_NOMBRE_CURSO) {
         NUEVO_USUARIO.cursos.push(curso.innerHTML)
       }
-      window.location.href = URL_BIENVENIDA_USUARIO
+      //Agregar nuevo usuario al objeto de usuarios
+      OBJECT_USUARIOS_REGISTRADOS[NUEVO_USUARIO.nombre] = NUEVO_USUARIO
+      console.log(OBJECT_USUARIOS_REGISTRADOS);
+      /* window.location.href = URL_BIENVENIDA_USUARIO */
     }
   })
 }
 //Exportando el archivo
-export {NUEVO_USUARIO}
-
-export function clickBotonRegistrar(){
-  BUTTON_REGISTRAR_USUARIO.addEventListener('click', ()=>{
-    console.log(NUEVO_USUARIO);
-  })
+/* export { OBJECT_USUARIOS_REGISTRADOS }
+import { ADD_NOMBRE_NUEVO } from "./bienvenida_usuario.js"
+function clickBotonRegistrar(nombreUsuario) {
+  ADD_NOMBRE_NUEVO.textContent = nombreUsuario
 }
+
+if (BUTTON_REGISTRAR_USUARIO){
+    BUTTON_REGISTRAR_USUARIO.addEventListener('click', clickBotonRegistrar)
+}
+
+export { clickBotonRegistrar } */
