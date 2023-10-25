@@ -58,7 +58,7 @@ if (COMBO_CURSOS) {
   })
 }
 //Creando e inicializando el objeto para poder exportarlo
-const OBJECT_USUARIOS_REGISTRADOS = {}
+let OBJECT_USUARIOS_REGISTRADOS = {}
 //Validando que los campos no estén vacios
 if (BUTTON_REGISTRAR_USUARIO) {
   BUTTON_REGISTRAR_USUARIO.addEventListener('click', ()=> {
@@ -75,13 +75,8 @@ if (BUTTON_REGISTRAR_USUARIO) {
       }
       //Agregar nuevo usuario al objeto de usuarios
       OBJECT_USUARIOS_REGISTRADOS[NUEVO_USUARIO.nombre] = NUEVO_USUARIO
-      /* OBJECT_USUARIOS_REGISTRADOS[NUEVO_USUARIO.nombre].nombre; */
-      window.location.href = URL_BIENVENIDA_USUARIO
+      /* window.location.href = URL_BIENVENIDA_USUARIO */
     }
   })
 }
-//Exportando el archivo
 export { OBJECT_USUARIOS_REGISTRADOS }
-/* function clickBotonRegistrar() {
-  ADD_NOMBRE_NUEVO.textContent = NOMBRE_DEL_USUARIO
-} */
