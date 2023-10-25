@@ -1,4 +1,6 @@
 import Alumno from "./clases/classAlumnos.js"
+import { BUTTON_REGISTRAR_USUARIO } from "./DOM.js"
+import { URL_BIENVENIDA_USUARIO } from "./DOM.js"
 
 const COMBO_CURSOS = document.getElementById('combo_cursos_index')
 const CONTAINER_MOSTRAR_CURSOS_SELECIONADOS = document.getElementById('mostrar_cursos_seleccionados_registro')
@@ -59,6 +61,10 @@ if (COMBO_CURSOS) {
 }
 //Creando e inicializando el objeto para poder exportarlo
 let OBJECT_USUARIOS_REGISTRADOS = {}
+//Creando una funcion para exportar
+function exportarObjeto(addUsuario) {
+  OBJECT_USUARIOS_REGISTRADOS[addUsuario.nombre] = addUsuario
+}
 //Validando que los campos no estén vacios
 if (BUTTON_REGISTRAR_USUARIO) {
   BUTTON_REGISTRAR_USUARIO.addEventListener('click', ()=> {
@@ -74,8 +80,9 @@ if (BUTTON_REGISTRAR_USUARIO) {
         NUEVO_USUARIO.cursos.push(curso.innerHTML)
       }
       //Agregar nuevo usuario al objeto de usuarios
-      OBJECT_USUARIOS_REGISTRADOS[NUEVO_USUARIO.nombre] = NUEVO_USUARIO
+      exportarObjeto(NUEVO_USUARIO)
       /* window.location.href = URL_BIENVENIDA_USUARIO */
+      console.log(OBJECT_USUARIOS_REGISTRADOS)
     }
   })
 }

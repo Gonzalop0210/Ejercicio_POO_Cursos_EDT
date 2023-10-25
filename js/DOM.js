@@ -1,7 +1,7 @@
 const link_button_registro = document.querySelector('#button_registrar_nueva_cuenta')
 const link_button_sesion = document.querySelector('#button_iniciar_sesion')
 const BUTTON_INICIAR_SESION = document.querySelector('#button_ingresar_sesion')
-const BUTTON_REGISTRAR_USUARIO = document.querySelector('#button_registrar_nuevo_usuario')
+export const BUTTON_REGISTRAR_USUARIO = document.querySelector('#button_registrar_nuevo_usuario')
 const BUTTON_AGREGAR_CURSO = document.querySelector('#agregar_curso_usuario')
 const OPCION_EDITAR = document.querySelector('#usuario_opcion_editar')
 const BUTTON_EDITAR_USUARIO_ADMIN = document.querySelector('#button_editar_usuario_admin')
@@ -37,12 +37,6 @@ if (BUTTON_INICIAR_SESION) {
     window.location.href = URL_BIENVENIDA_USUARIO
   })
 }
-
-/* if (BUTTON_REGISTRAR_USUARIO) {
-  BUTTON_REGISTRAR_USUARIO.addEventListener('click', ()=> {
-    window.location.href = URL_BIENVENIDA_USUARIO
-  })
-} */
 
 if (BUTTON_AGREGAR_CURSO) {
   BUTTON_AGREGAR_CURSO.addEventListener('click', ()=> {
@@ -85,3 +79,4 @@ if (AGREGAR_CURSO_NUEVO_USUARIO) {
     window.location.href = URL_BIENVENIDA_USUARIO
   })
 }
+export { URL_BIENVENIDA_USUARIO }
