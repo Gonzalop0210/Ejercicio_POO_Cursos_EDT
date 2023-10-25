@@ -61,29 +61,26 @@ if (COMBO_CURSOS) {
 }
 //Creando e inicializando el objeto para poder exportarlo
 let OBJECT_USUARIOS_REGISTRADOS = {}
-//Creando una funcion para exportar
-function exportarObjeto(addUsuario) {
-  OBJECT_USUARIOS_REGISTRADOS[addUsuario.nombre] = addUsuario
+function obtenerUsuariosObject() {
+  return OBJECT_USUARIOS_REGISTRADOS
 }
-//Validando que los campos no estén vacios
+
 if (BUTTON_REGISTRAR_USUARIO) {
   BUTTON_REGISTRAR_USUARIO.addEventListener('click', ()=> {
     if (NOMBRE_NUEVO_USUARIO_REG.value === '' || APELLIDOS_NUEVO_USUARIO_REG.value === '' || EDAD_NUEVO_USUARIO_REG.value === '' || CORREO_NUEVO_USUARIO_REG.value === '' || CONTRASEÑA_NUEVO_USUARIO_REG.value === '' || cont <= 1) {
       alert('Llenar completamente el formulario')
     } else {
-      //Obtengo los datos del usuario que se registro
       const NUEVO_USUARIO = new Alumno(NOMBRE_NUEVO_USUARIO_REG.value, APELLIDOS_NUEVO_USUARIO_REG.value, EDAD_NUEVO_USUARIO_REG.value, CORREO_NUEVO_USUARIO_REG.value, CONTRASEÑA_NUEVO_USUARIO_REG.value)
-      //Aqui selecciono todos los elementos span del html y los que se crea al seleccionar o viceversa
       const HTML_SPAN_NOMBRE_CURSO = document.querySelectorAll('.textarea__curso--seleccionado')
-      //Ya que es un NodeList[] se recorre y obtengo el valor del span
       for (const curso of HTML_SPAN_NOMBRE_CURSO) {
         NUEVO_USUARIO.cursos.push(curso.innerHTML)
       }
-      //Agregar nuevo usuario al objeto de usuarios
-      exportarObjeto(NUEVO_USUARIO)
+      OBJECT_USUARIOS_REGISTRADOS[NUEVO_USUARIO.nombre] = NUEVO_USUARIO
+      obtenerUsuariosObject()
       /* window.location.href = URL_BIENVENIDA_USUARIO */
       console.log(OBJECT_USUARIOS_REGISTRADOS)
     }
   })
 }
 export { OBJECT_USUARIOS_REGISTRADOS }
+export { obtenerUsuariosObject }
