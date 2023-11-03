@@ -16,6 +16,7 @@ if (COMBO_CURSOS) {
       const ICON_ELIMINAR_CURSO = document.createElement('i')
       //Añadiendo las clases a los nodos creados
       DIV_CONTAINER_CURSO_ITEM.classList.add('container--cursos-seleccionado__item')
+      SPAN_NOMBRE_CURSO.id = 'id_nombre_curso_seleccionado'
       SPAN_NOMBRE_CURSO.classList.add('textarea__curso--seleccionado')
       ICON_ELIMINAR_CURSO.classList.add('fa-solid')
       ICON_ELIMINAR_CURSO.classList.add('fa-xmark')
@@ -72,6 +73,12 @@ if (BUTTON_REGISTRAR_USUARIO) {
         NUEVO_USUARIO.cursos.push(curso.innerHTML)
       }
       OBJECT_USUARIOS_REGISTRADOS[NUEVO_USUARIO.nombre] = NUEVO_USUARIO
+      // Crear una URL con los parámetros de usuario y cursos
+      const queryString = `nombre_registro_nuevo_usuario=${NUEVO_USUARIO.nombre}&id_nombre_curso_seleccionado=${NUEVO_USUARIO.cursos}`;
+      const url = `usuario_bienvenida.html?${queryString}`;
+      
+      // Redireccionar a b.html con la información del usuario
+      window.location.href = url;
     }
   })
 }
