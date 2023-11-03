@@ -1,8 +1,10 @@
-import { OBJECT_USUARIOS_REGISTRADOS } from './registro_nuevo_usuario.js'
-import { BUTTON_REGISTRAR_USUARIO } from './DOM.js'
-export const ADD_NOMBRE_NUEVO = document.getElementById('nombre_bienvenida_nuevo_usuario')
-export const CONTAINER_BIENVENIDA = document.getElementById('section_bienvenida')
+const ADD_NOMBRE_NUEVO = document.getElementById('nombre_bienvenida_nuevo_usuario')
+const CONTAINER_BIENVENIDA = document.getElementById('section_bienvenida')
+const urlParams = new URLSearchParams(window.location.search)
+const nombreAlumno = urlParams.get("nombre_registro_nuevo_usuario")
 
-document.addEventListener('load', ()=>{
-  ADD_NOMBRE_NUEVO.textContent = 'obtenerUsuariosObject()'
-})
+if (nombreAlumno) {
+  ADD_NOMBRE_NUEVO.innerHTML = nombreAlumno
+} else {
+  console.log('Algo Falla');
+}

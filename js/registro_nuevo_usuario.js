@@ -59,12 +59,10 @@ if (COMBO_CURSOS) {
     return cont;
   })
 }
-import { CONTAINER_BIENVENIDA } from "./bienvenida_usuario.js"
-//Creando e inicializando el objeto para poder exportarlo
-let OBJECT_USUARIOS_REGISTRADOS = {}
 
 if (BUTTON_REGISTRAR_USUARIO) {
   BUTTON_REGISTRAR_USUARIO.addEventListener('click', ()=> {
+    let OBJECT_USUARIOS_REGISTRADOS = {}
     if (NOMBRE_NUEVO_USUARIO_REG.value === '' || APELLIDOS_NUEVO_USUARIO_REG.value === '' || EDAD_NUEVO_USUARIO_REG.value === '' || CORREO_NUEVO_USUARIO_REG.value === '' || CONTRASEÑA_NUEVO_USUARIO_REG.value === '' || cont <= 1) {
       alert('Llenar completamente el formulario')
     } else {
@@ -74,10 +72,6 @@ if (BUTTON_REGISTRAR_USUARIO) {
         NUEVO_USUARIO.cursos.push(curso.innerHTML)
       }
       OBJECT_USUARIOS_REGISTRADOS[NUEVO_USUARIO.nombre] = NUEVO_USUARIO
-      /* window.location.href = URL_BIENVENIDA_USUARIO */
-      console.log(OBJECT_USUARIOS_REGISTRADOS)
     }
   })
 }
-export { OBJECT_USUARIOS_REGISTRADOS }
-/* export { obtenerUsuariosObject } */

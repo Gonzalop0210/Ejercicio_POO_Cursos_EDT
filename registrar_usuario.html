@@ -14,10 +14,10 @@
     <a href="index.html" class="container-section__a--link-administrator">Atrás</a>
     <div class="container-section__container-buttons">
       <h2 class="container-section__title">Registrate</h2>
-      <div class="container-section__container-form">
+      <form class="container-section__container-form" action="usuario_bienvenida.html" method="get">
         <div class="container-form--item">
           <label for="" class="container-form__label container-form__label-nombre">Nombre</label>
-          <input id="nombre_registro_nuevo_usuario" type="text" class="container-form__input container-form__input-nombre">
+          <input id="nombre_registro_nuevo_usuario" type="text" class="container-form__input container-form__input-nombre" name="nombre_registro_nuevo_usuario">
         </div>
         <div class="container-form--item">
           <label for="" class="container-form__label container-form__label-apellidos">Apellidos</label>
@@ -56,11 +56,10 @@
         <div class="container-form--item">
           <button id="button_registrar_nuevo_usuario" class="container-section__button container-form__button--entrar container-form__button--entrar-registrar">Registrar</button>
         </div>
-      </div>
+      </form>
     </div>
   </section>
   <script type="module" src="js/DOM.js"></script>
   <script type="module" src="js/registro_nuevo_usuario.js" defer></script>
-  <script type="module" src="js/bienvenida_usuario.js" defer></script>
 </body>
 </html>
