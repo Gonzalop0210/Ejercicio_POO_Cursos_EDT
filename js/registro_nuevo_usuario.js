@@ -8,6 +8,12 @@ const CONTAINER_MOSTRAR_CURSOS_SELECIONADOS = document.getElementById('mostrar_c
 //Guardando los cursos seleccionados en un arreglo
 const arrayCursosSeleccionados = []
 
+function llenarArreglo(CURSO_SELECCIONADO) {
+  // Resto del código para llenar el arreglo
+  arrayCursosSeleccionados.push(CURSO_SELECCIONADO);
+}
+
+export {llenarArreglo, arrayCursosSeleccionados}
 //Seleccion de cursos, mostrar y eliminar el curso ya seleccionado
 if (COMBO_CURSOS) {
   COMBO_CURSOS.addEventListener('change', ()=> {
@@ -35,8 +41,7 @@ if (COMBO_CURSOS) {
       }
       //Hacer que en el combo se mantenga el seleccione
       COMBO_CURSOS.selectedIndex = 0
-      arrayCursosSeleccionados.push(CURSO_SELECCIONADO)
-      console.log(arrayCursosSeleccionados)
+      llenarArreglo(CURSO_SELECCIONADO)
       //Deseleccionar los cursos y devolverlos al combo
       const ICON_QUITAR_CURSO_SELECCIONADO = document.getElementById(`quitar_curso_${CURSO_SELECCIONADO}`)
       ICON_QUITAR_CURSO_SELECCIONADO.addEventListener('click', ()=> {
@@ -50,7 +55,6 @@ if (COMBO_CURSOS) {
     }
   })
 }
-
 //Validaciones de llenado de los inputs
 const NOMBRE_NUEVO_USUARIO_REG = document.getElementById('nombre_registro_nuevo_usuario')
 const APELLIDOS_NUEVO_USUARIO_REG = document.getElementById('apellidos_registro_nuevo_usuario')
@@ -79,6 +83,5 @@ if (BUTTON_REGISTRAR_USUARIO) {
       }
       OBJECT_USUARIOS_REGISTRADOS[NUEVO_USUARIO.nombre] = NUEVO_USUARIO
     }
-    event.preventDefault()
   })
 }
