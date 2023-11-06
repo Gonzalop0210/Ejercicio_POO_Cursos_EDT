@@ -5,6 +5,9 @@ import { URL_BIENVENIDA_USUARIO } from "./DOM.js"
 const COMBO_CURSOS = document.getElementById('combo_cursos_index')
 const CONTAINER_MOSTRAR_CURSOS_SELECIONADOS = document.getElementById('mostrar_cursos_seleccionados_registro')
 
+//Guardando los cursos seleccionados en un arreglo
+const arrayCursosSeleccionados = []
+
 //Seleccion de cursos, mostrar y eliminar el curso ya seleccionado
 if (COMBO_CURSOS) {
   COMBO_CURSOS.addEventListener('change', ()=> {
@@ -32,6 +35,8 @@ if (COMBO_CURSOS) {
       }
       //Hacer que en el combo se mantenga el seleccione
       COMBO_CURSOS.selectedIndex = 0
+      arrayCursosSeleccionados.push(CURSO_SELECCIONADO)
+      console.log(arrayCursosSeleccionados)
       //Deseleccionar los cursos y devolverlos al combo
       const ICON_QUITAR_CURSO_SELECCIONADO = document.getElementById(`quitar_curso_${CURSO_SELECCIONADO}`)
       ICON_QUITAR_CURSO_SELECCIONADO.addEventListener('click', ()=> {
@@ -62,7 +67,7 @@ if (COMBO_CURSOS) {
 }
 
 if (BUTTON_REGISTRAR_USUARIO) {
-  BUTTON_REGISTRAR_USUARIO.addEventListener('click', ()=> {
+  BUTTON_REGISTRAR_USUARIO.addEventListener('click', (event)=> {
     let OBJECT_USUARIOS_REGISTRADOS = {}
     if (NOMBRE_NUEVO_USUARIO_REG.value === '' || APELLIDOS_NUEVO_USUARIO_REG.value === '' || EDAD_NUEVO_USUARIO_REG.value === '' || CORREO_NUEVO_USUARIO_REG.value === '' || CONTRASEÑA_NUEVO_USUARIO_REG.value === '' || cont <= 1) {
       alert('Llenar completamente el formulario')
@@ -73,12 +78,7 @@ if (BUTTON_REGISTRAR_USUARIO) {
         NUEVO_USUARIO.cursos.push(curso.innerHTML)
       }
       OBJECT_USUARIOS_REGISTRADOS[NUEVO_USUARIO.nombre] = NUEVO_USUARIO
-      // Crear una URL con los parámetros de usuario y cursos
-      const queryString = `nombre_registro_nuevo_usuario=${NUEVO_USUARIO.nombre}&id_nombre_curso_seleccionado=${NUEVO_USUARIO.cursos}`;
-      const url = `usuario_bienvenida.html?${queryString}`;
-      
-      // Redireccionar a b.html con la información del usuario
-      window.location.href = url;
     }
+    event.preventDefault()
   })
 }

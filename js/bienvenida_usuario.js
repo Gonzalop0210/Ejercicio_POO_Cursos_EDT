@@ -30,7 +30,7 @@ if (nombre_cursos_xd) {
   divContainer.appendChild(divIcon)
   divIcon.appendChild(spanIcon)
   spanIcon.appendChild(icon)
-  spanNameCurso.textContent = cursos_xd
+  spanNameCurso.textContent = 'cursos_xd'
 } else {
   console.log('no funciona');
 }
