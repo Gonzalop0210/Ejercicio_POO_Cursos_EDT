@@ -2,7 +2,14 @@ const ADD_NOMBRE_NUEVO = document.getElementById('nombre_bienvenida_nuevo_usuari
 const CONTAINER_BIENVENIDA = document.getElementById('section_bienvenida')
 const urlParams = new URLSearchParams(window.location.search)
 const nombreAlumno = urlParams.get("nombre_registro_nuevo_usuario")
-import { llenarArreglo, arrayCursosSeleccionados } from "./registro_nuevo_usuario.js"
+
+//Guardando los cursos seleccionados en un arreglo
+export let arrayCursosSeleccionados = []
+
+export function llenarArreglo(guardarCurso) {
+  // Resto del código para llenar el arreglo
+  arrayCursosSeleccionados.push(guardarCurso);
+}
 
 if (nombreAlumno) {
   ADD_NOMBRE_NUEVO.innerHTML = nombreAlumno
@@ -31,7 +38,7 @@ if (nombre_cursos_xd) {
   divContainer.appendChild(divIcon)
   divIcon.appendChild(spanIcon)
   spanIcon.appendChild(icon)
-  spanNameCurso.textContent = 'arrayCursosSeleccionados[0]'
+  spanNameCurso.textContent = arrayCursosSeleccionados[0]
   console.log(arrayCursosSeleccionados);
 } else {
   console.log('no funciona');

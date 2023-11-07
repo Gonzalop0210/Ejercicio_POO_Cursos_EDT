@@ -5,15 +5,8 @@ import { URL_BIENVENIDA_USUARIO } from "./DOM.js"
 const COMBO_CURSOS = document.getElementById('combo_cursos_index')
 const CONTAINER_MOSTRAR_CURSOS_SELECIONADOS = document.getElementById('mostrar_cursos_seleccionados_registro')
 
-//Guardando los cursos seleccionados en un arreglo
-const arrayCursosSeleccionados = []
+import {llenarArreglo, arrayCursosSeleccionados} from "./bienvenida_usuario.js"
 
-function llenarArreglo(CURSO_SELECCIONADO) {
-  // Resto del código para llenar el arreglo
-  arrayCursosSeleccionados.push(CURSO_SELECCIONADO);
-}
-
-export {llenarArreglo, arrayCursosSeleccionados}
 //Seleccion de cursos, mostrar y eliminar el curso ya seleccionado
 if (COMBO_CURSOS) {
   COMBO_CURSOS.addEventListener('change', ()=> {
