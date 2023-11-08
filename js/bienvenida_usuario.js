@@ -4,7 +4,7 @@ const urlParams = new URLSearchParams(window.location.search)
 const nombreAlumno = urlParams.get("nombre_registro_nuevo_usuario")
 
 //Guardando los cursos seleccionados en un arreglo
-export let arrayCursosSeleccionados = []
+export let arrayCursosSeleccionados = ['PHP']
 
 export function llenarArreglo(guardarCurso) {
   // Resto del código para llenar el arreglo
@@ -21,24 +21,26 @@ const containerAbsolutoDiv = document.querySelector('.container-section__contain
 const nombre_cursos_xd = urlParams.get("nombre_registro_nuevo_usuario")
 const cursos_xd = urlParams.get("id_nombre_curso_seleccionado")
 if (nombre_cursos_xd) {
-  const divContainer = document.createElement('div')
-  divContainer.classList.add('container-section__container-item-personalizados')
-  const spanNameCurso = document.createElement('span')
-  spanNameCurso.classList.add('container-item-personalizado--name')
-  const divIcon = document.createElement('div')
-  divIcon.classList.add('container-item-personalizado--opciones')
-  const spanIcon = document.createElement('span')
-  spanIcon.classList.add('container-item-personalizado--opciones-item')
-  spanIcon.classList.add('container-item-personalizado--opciones-eliminar')
-  const icon = document.createElement('i')
-  icon.classList.add('fa-solid')
-  icon.classList.add('fa-trash')
-  containerAbsolutoDiv.appendChild(divContainer)
-  divContainer.appendChild(spanNameCurso)
-  divContainer.appendChild(divIcon)
-  divIcon.appendChild(spanIcon)
-  spanIcon.appendChild(icon)
-  spanNameCurso.textContent = arrayCursosSeleccionados[0]
+  for (const cursoSelect of arrayCursosSeleccionados) {
+    const divContainer = document.createElement('div')
+    divContainer.classList.add('container-section__container-item-personalizados')
+    const spanNameCurso = document.createElement('span')
+    spanNameCurso.classList.add('container-item-personalizado--name')
+    const divIcon = document.createElement('div')
+    divIcon.classList.add('container-item-personalizado--opciones')
+    const spanIcon = document.createElement('span')
+    spanIcon.classList.add('container-item-personalizado--opciones-item')
+    spanIcon.classList.add('container-item-personalizado--opciones-eliminar')
+    const icon = document.createElement('i')
+    icon.classList.add('fa-solid')
+    icon.classList.add('fa-trash')
+    containerAbsolutoDiv.appendChild(divContainer)
+    divContainer.appendChild(spanNameCurso)
+    divContainer.appendChild(divIcon)
+    divIcon.appendChild(spanIcon)
+    spanIcon.appendChild(icon)
+    spanNameCurso.textContent = cursoSelect
+  }
   console.log(arrayCursosSeleccionados);
 } else {
   console.log('no funciona');
